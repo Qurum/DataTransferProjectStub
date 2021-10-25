@@ -8,5 +8,23 @@ namespace Abethropalle\DataTransferProjectStub;
 
 class Main
 {
+    public function __construct(
+        protected ProviderInterface $provider,
+        protected ResolverInterface $resolver,
+        protected LoggerInterface   $logger
+    )
+    {
+    }
 
+    public function run()
+    {
+        $data = $this->provider->getData();
+        $adapter = $this->resolver->resolve($this->provider->getType());
+        $this->logger->log(
+            "A data transfer operation was performed with the result: "
+            . PHP_EOL .
+            $adapter->proceed($data)
+            . PHP_EOL
+        );
+    }
 }
