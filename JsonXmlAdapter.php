@@ -29,6 +29,7 @@ class JsonXmlAdapter extends BasicAdapter implements AdapterInterface
             }
             return $node;
         }
-        return toXml($json, $xml);
+        $xml = toXml($json, $xml);
+        return $xml->asXML();
     }
 }
