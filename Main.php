@@ -15,6 +15,11 @@ class Main
     )
     {
     }
+	
+	public function saySomething($phrase)
+	{
+		$this->logger->log($phrase);
+	}
 
     public function run()
     {
