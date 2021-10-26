@@ -12,9 +12,9 @@ namespace Abethropalle\DataTransferProjectStub;
 class Resolver implements ResolverInterface
 {
     public function __construct(
-        protected AdapterInterface $json_xml_adapter,
-        protected AdapterInterface $xml_json_adapter,
-        protected AdapterInterface $id_adapter
+        protected JsonXmlAdapter $json_xml_adapter,
+        protected XmlJsonAdapter $xml_json_adapter,
+        protected IdentityAdapter $id_adapter
     ){}
 
     public function resolve($type): AdapterInterface
